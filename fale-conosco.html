@@ -41,11 +41,11 @@
     </hgroup>
   </header>
 
-  <form>
+  <form method="post" id="id-Contato">
     <fieldset id="usuario"><legend>Identificação do Usuário</legend>
-      <p><label for="cNome">Nome: </label><input type="text" name="name-Nome" id="id-Nome" size="30" maxlength="30"></p>
-      <p><label for="cSenha">Senha: </label> <input type= "password" name="name-Senha" id="id-Senha" size="8" maxlength="8"></p>
-      <p><label for="cMail">E-mail: </label><input type="email" name="name-Mail" id="id-Mail" size="30" maxlength="30"></p>
+      <p><label for="id-Nome">Nome: </label><input type="text" name="name-Nome" id="id-Nome" size="30" maxlength="30"></p>
+      <p><label for="id-Senha">Senha: </label> <input type= "password" name="name-Senha" id="id-Senha" size="8" maxlength="8"></p>
+      <p><label for="id-Mail">E-mail: </label><input type="email" name="name-Mail" id="id-Mail" size="30" maxlength="30"></p>
       <fieldset id="sexo"><legend>Sexo:</legend>
         <input type="radio" name="name-Sexo" id="id-Masc"/><label for="id-Masc">Masculino</label>
         <input type="radio" name="name-Sexo" id="id-Fem"/><label for="id-Fem">Feminino</label>
@@ -56,13 +56,54 @@
     <fieldset id="endereco"><legend>Endereço do Usuário</legend>
       <p><label for="">Endereço:</label><input type="text" name="name-Endereco" id="id-Endereco" size="13" maxlength="100"></p>
       <p><label for="">Número:</label><input type="number" name="name-Numero" id="id-Numero" min="0"> </p>
-      <p><label for="id-Estado">Estado:</label></p>
+      <p><label for="id-Estado">Estado:</label>
+      <select name="nome-Estado" id="id-Estado">
+        <optgroup label="Região Norte">
+          <option value="">Acre</option>
+          <option value="">Amapá</option>
+          <option value="">Amazonas</option>
+          <option value="PA">Pará</option>
+          <option value="">Rondonia</option>
+          <option value="">Roraima</option>
+          <option value="">Tocantins</option>
+        </optgroup>
+        <optgroup label="Região Nordeste">
+          <option value="">Alagoas</option>
+          <option value="">Bahia</option>
+          <option value="">Ceará</option>
+          <option value="">Maranhão</option>
+          <option value="">Paraíba</option>
+          <option value="">Pernambuco</option>
+          <option value="">Piauí</option>
+          <option value="">Rio Grande do Norte</option>
+          <option value="">Sergipe</option>
+        </optgroup>
+        <optgroup label="Região Centro-oeste">
+          <option value="">Goias</option>
+          <option value="">Mato Grosso</option>
+          <option value="">Mato Grosso do Sul</option>
+        </optgroup>
+        <optgroup label="Região Sudeste">
+          <option value="">Espírito Santo</option>
+          <option value="MG">Minas Gerais</option>
+          <option value="RJ">Rio de Janeiro</option>
+          <option value="SP">São Paulo</option>
+        </optgroup>
+        <optgroup label="Região Sul">
+          <option value="PR">Paraná</option>
+          <option value="RS">Rio Garande do Sul</option>
+          <option value="SC">Santa Catarina</option>
+        </optgroup>
+      </select></p>
       <p><label for="id-Cidade">Cidade:</label></p>
+      <input type="text" name="name-Cidade" id="id-Cidade" maxlength="40" size="20">
     </fieldset>
 
     <fieldset id="mensagem"><legend>Mensagem do Usuário</legend>
       <p><label for="id-GrauUrgencia">Grau de Urgência:</label></p>
-      <p><label for="id-Mensagem">Mensagem:</label></p>
+      <p>Min<input type="range" name="name-Urgencia" id="id-Urgencia" min="0" max="10" step="2">Max</p>
+      <p><label for="id-Mensagem">Mensagem:</label>
+      <textarea name="name-Mensagem" id="id-Mensagem" cols="45" rows="5" placeholder="Anotações"></textarea></p>
     </fieldset>
 
     <fieldset id="pedido"><legend>Quero um Google Glass</legend>
