@@ -6,6 +6,14 @@
   <title>Tudo sobre Google Glass</title>
   <link rel="stylesheet" href="_css/estilo.css">
   <link rel="stylesheet" href="_css/form.css">
+  <script language="javascript" src="_javascript/funcoes.js"></script>
+  <script>
+    function calc_total() {
+      var qtd = parseInt(document.getElementById('id-Quantidade').value);
+      tot = qtd * 1500;
+      document.getElementById('id-Total').value = tot;
+    }
+  </script>
   </head>
 
 <body>
@@ -21,11 +29,11 @@
     <nav id="menu">
       <h1>Menu Principal</h1>
       <ul>
-        <li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/glass-oculos-preto-peq.png')"><a href="index.html">Home</a></li>
-        <li onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/glass-oculos-preto-peq.png')"><a href="specs.html">Especificações</a></li>
-        <li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/glass-oculos-preto-peq.png')"><a href="fotos.html">Fotos</a></li>
-        <li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/glass-oculos-preto-peq.png')"><a href="multimidia.html">Multimídia</a></li>
-        <li onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/glass-oculos-preto-peq.png')"><a href="fale-conosco.html">Fale conosco</a></li>
+        <li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="index.html">Home</a></li>
+        <li onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="specs.html">Especificações</a></li>
+        <li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fotos.html">Fotos</a></li>
+        <li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="multimidia.html">Multimídia</a></li>
+        <li onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fale-conosco.html">Fale conosco</a></li>
         </ul>
     </nav>
   </header>
@@ -41,50 +49,51 @@
     </hgroup>
   </header>
 
-  <form method="post" id="id-Contato">
+  <form method="post" id="id-Contato" action="mailto:contato@e-mail.com" oninput="calc_total();">
     <fieldset id="usuario"><legend>Identificação do Usuário</legend>
-      <p><label for="id-Nome">Nome: </label><input type="text" name="name-Nome" id="id-Nome" size="30" maxlength="30"></p>
-      <p><label for="id-Senha">Senha: </label> <input type= "password" name="name-Senha" id="id-Senha" size="8" maxlength="8"></p>
-      <p><label for="id-Mail">E-mail: </label><input type="email" name="name-Mail" id="id-Mail" size="30" maxlength="30"></p>
-      <fieldset id="sexo"><legend>Sexo:</legend>
-        <input type="radio" name="name-Sexo" id="id-Masc"/><label for="id-Masc">Masculino</label>
+      <p><label for="id-Nome">Nome </label><input type="text" name="name-Nome" id="id-Nome" size="30" maxlength="30"></p>
+      <p><label for="id-Senha">Senha </label> <input type= "password" name="name-Senha" id="id-Senha" size="8" maxlength="8"></p>
+      <p><label for="id-Mail">E-mail </label><input type="email" name="name-Mail" id="id-Mail" size="30" maxlength="30"></p>
+      <fieldset id="sexo"><legend>Sexo </legend>
+        <input type="radio" name="name-Sexo" id="id-Masc"/><label for="id-Masc">Masculino</label><br>
         <input type="radio" name="name-Sexo" id="id-Fem"/><label for="id-Fem">Feminino</label>
       </fieldset>
       <p><label for="">Data de Nascimento: </label><input type="date" name="name-Nasc" id="id-Nasc"> </p>      
     </fieldset>
 
     <fieldset id="endereco"><legend>Endereço do Usuário</legend>
-      <p><label for="">Endereço:</label><input type="text" name="name-Endereco" id="id-Endereco" size="13" maxlength="100"></p>
-      <p><label for="">Número:</label><input type="number" name="name-Numero" id="id-Numero" min="0"> </p>
+      <p><label for="">Endereço </label><input type="text" name="name-Endereco" id="id-Endereco" size="13" maxlength="100"></p>
+      <p><label for="">Número </label><input type="number" name="name-Numero" id="id-Numero" min="0"> </p>
       <p><label for="id-Estado">Estado:</label>
       <select name="nome-Estado" id="id-Estado">
         <optgroup label="Região Norte">
-          <option value="">Acre</option>
-          <option value="">Amapá</option>
-          <option value="">Amazonas</option>
-          <option value="PA">Pará</option>
-          <option value="">Rondonia</option>
-          <option value="">Roraima</option>
-          <option value="">Tocantins</option>
+          <option value="AC">Acre</option>
+          <option value="AP">Amapá</option>
+          <option value="AM">Amazonas</option>
+          <option value="PA" selected>Pará</option>
+          <option value="RO">Rondonia</option>
+          <option value="RR">Roraima</option>
+          <option value="TO">Tocantins</option>
         </optgroup>
         <optgroup label="Região Nordeste">
-          <option value="">Alagoas</option>
-          <option value="">Bahia</option>
-          <option value="">Ceará</option>
-          <option value="">Maranhão</option>
-          <option value="">Paraíba</option>
-          <option value="">Pernambuco</option>
-          <option value="">Piauí</option>
-          <option value="">Rio Grande do Norte</option>
-          <option value="">Sergipe</option>
+          <option value="AL">Alagoas</option>
+          <option value="BA">Bahia</option>
+          <option value="CE">Ceará</option>
+          <option value="MA">Maranhão</option>
+          <option value="PB">Paraíba</option>
+          <option value="PE">Pernambuco</option>
+          <option value="PI">Piauí</option>
+          <option value="RN">Rio Grande do Norte</option>
+          <option value="SE">Sergipe</option>
         </optgroup>
         <optgroup label="Região Centro-oeste">
-          <option value="">Goias</option>
-          <option value="">Mato Grosso</option>
-          <option value="">Mato Grosso do Sul</option>
+          <option value="DF">Distrito Federal</option>
+          <option value="GO">Goias</option>
+          <option value="MT">Mato Grosso</option>
+          <option value="MS">Mato Grosso do Sul</option>
         </optgroup>
         <optgroup label="Região Sudeste">
-          <option value="">Espírito Santo</option>
+          <option value="ES">Espírito Santo</option>
           <option value="MG">Minas Gerais</option>
           <option value="RJ">Rio de Janeiro</option>
           <option value="SP">São Paulo</option>
@@ -95,25 +104,29 @@
           <option value="SC">Santa Catarina</option>
         </optgroup>
       </select></p>
-      <p><label for="id-Cidade">Cidade:</label></p>
-      <input type="text" name="name-Cidade" id="id-Cidade" maxlength="40" size="20">
+      <p><label for="id-Cidade">Cidade:</label>
+      <input type="text" name="name-Cidade" id="id-Cidade" maxlength="40" size="20"></p>
     </fieldset>
 
     <fieldset id="mensagem"><legend>Mensagem do Usuário</legend>
-      <p><label for="id-GrauUrgencia">Grau de Urgência:</label></p>
+      <p><label for="id-GrauUrgencia">Grau de Urgência </label></p>
       <p>Min<input type="range" name="name-Urgencia" id="id-Urgencia" min="0" max="10" step="2">Max</p>
-      <p><label for="id-Mensagem">Mensagem:</label>
+      <p><label for="id-Mensagem">Mensagem </label>
       <textarea name="name-Mensagem" id="id-Mensagem" cols="45" rows="5" placeholder="Anotações"></textarea></p>
     </fieldset>
 
     <fieldset id="pedido"><legend>Quero um Google Glass</legend>
-      <p><label for="id-Pedido">Gostaria de adquirir um Google Glass quando disponível</label></p>
-      <p><label for="id-Cor">Cor:</label></p>
-      <p><label for="id-Quantidade">Quantidade:</label></p>
-      <p><label for="id-Total">Preço Total: R$</label></p>
+      <p><input type="checkbox" name="name-Pedido" id="id-Pedido">
+        <label for="id-Pedido">Gostaria de adquirir um Google Glass quando disponível</label></p>
+      <p><label for="id-Cor">Cor </label>
+        <input type="color" name="name-Cor" id="id-Cor" value="#0000FF"></p>
+      <p><label for="id-Quantidade">Quantidade </label>
+        <input type="number" name="name-Quantidade" id="id-Quantidade" min="0" max="5" value="0"></p>
+      <p><label for="id-Total">Preço Total R$</label>
+        <input type="text" name="name-Total" id="id-Total" placeholder="Total a Pagar" readonly></p>
     </fieldset>
 
-    [BOTÃO ENVIAR]
+    <input type="image" name="name-Enviar" src="_imagens/botao-enviar.png">
   </form>
 
   <footer id="rodape">
