@@ -1,7 +1,7 @@
 ## 🚀 Rockeatseat
 
 <p align="center">
-  <img alt="jornada do zero à primeira vaga" src="./assets/jornada.png" width="50%">
+  <img alt="jornada do zero à primeira vaga" src="./assets/jornada.png" width="25%">
 </p>
 
 <h2>DE 13 A 15 DE MARÇO</h2><br>
