@@ -14,5 +14,5 @@
 </p>
 
 <p align="right">
-  <img alt=" link do figma" src="./assets/figma.png">
+  <a href="https://www.figma.com/file/8l9trVg0DXzXJZzlmBqZDl/Horror-Game-LP-(Community)?node-id=0-1&t=Jn3teQX4nSigEKCu-0"><img alt=" link do figma" src="./assets/figma.png"></a>
 </p>
