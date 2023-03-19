@@ -1,6 +1,6 @@
 ## 🚀 Rockeatseat
 
-<p align="center">
+<p align="right">
   <img alt="jornada do zero à primeira vaga" src="./assets/jornada.png" width="25%">
 </p>
 
